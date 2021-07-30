@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>파일 하나 업로드</h1>
+<form method = 'post' action = '/file/upload' enctype = 'multipart/form-data'>
+	<input type = 'file' name = 'file'>
+	<input type = 'submit' value = 'Upload'>
+</form>
+
+<h1>파일 여러개 업로드 - multiple</h1>
+<form method = 'post' action = '/file/upload2' enctype = 'multipart/form-data'>
+	<input type = 'file' name = 'files' multiple>
+	<input type = 'submit' value = 'Upload'>
+</form>
+
+<h1>파일 항목별 여러개 업로드</h1>
+<form method = 'post' action = '/file/upload3' enctype = 'multipart/form-data'>
+	한개 <input type = 'file' name = 'one'><br>
+	두개 <input type = 'file' name = 'two'> 
+	<input type = 'submit' value = "항목별 Upload">
+</form>
+{% endblock %}
